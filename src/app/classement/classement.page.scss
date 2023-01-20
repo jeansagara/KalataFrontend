@@ -1,0 +1,87 @@
+.cuba{
+    height: 10PX;
+    border-radius: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+.un{
+    z-index: 1;
+    position: absolute;
+    top: 24%;
+    margin-left: 112px;
+    height: 50PX;
+   
+}
+.deux{
+   
+    z-index: 1;
+    position: absolute;
+    top: 37%;
+    margin-left: 33px;
+    height: 50PX;
+}
+.trois{
+
+    z-index: 1;
+    position: absolute;
+    top: 43%;
+    margin-left: 188px;
+    height: 50PX;
+}
+.lu{
+    background-color: white;
+    height: 20PX;
+    width: 25PX;
+    padding-left: 4px;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    top: -95px;
+    left: 127px;
+
+}
+
+.ma{
+    background-color: white;
+    height: 20PX;
+    width: 25PX;
+    padding-left: 4px;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    top: -67px;
+    left: 24px;
+}
+
+.me{
+    background-color: white;
+    height: 20PX;
+    width: 25PX;
+    padding-left: 4px;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    top: -57px;
+    left: 154px;
+
+}
+
+
+.global{
+    display: flex;
+    padding-top: 20PX;
+}
+
+.imgelection{
+    height: auto;
+    width: 10VH;
+    margin-left: 30PX;
+}
+.date{
+    padding-right: 05px;
+    padding-left: 05px;
+}
+a{
+    text-decoration: none;
+    color: white;
+  }

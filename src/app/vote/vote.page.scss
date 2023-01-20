@@ -1,0 +1,53 @@
+
+.candidat{
+    height: 75%;
+
+}
+
+.parti{
+    height: 30px;
+    margin-right: 12px;
+    margin-top: -11%;
+   
+}
+
+.parti{
+    height: 30px;
+    margin-right: 12px;
+    margin-top: -18%;
+    margin-left: 160px;
+    display: block;
+}
+
+.bb{
+    font-size: 122PX;
+    margin-left: 20%;
+    margin-right: 10%;
+    padding: 20PX;
+}
+
+
+// Bouton popop
+button{
+    background-color: white;
+    color: white;
+    padding: 7px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.candidatVote{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+    color: white;
+  }
+
+.vote{
+    
+}

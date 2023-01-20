@@ -1,0 +1,64 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>inscription</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+
+  <body>
+    <div class="wrapper">
+      <h2>Inscription</h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Nom" required>
+        </div>
+        <div class="input-box">
+          <input type="date" placeholder="Date de naissance" required>
+        </div>
+        <ion-list>
+          <ion-item>
+            <ion-select placeholder="Genre" [multiple]="true">
+              <ion-select-option value="homme">Homme</ion-select-option>
+              <ion-select-option value="femme">Femme</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <div class="input-box">
+          <input type="mail" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Mot de passe" required>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Pays" required>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Regions" required>
+        </div>
+
+
+        <!--Image-->
+        <!-- <div class="selectimage">
+            <input type="file" class="image" id="exampleFormControlFile1">
+          </div> -->
+
+
+
+
+        <!-- <div class="policy">
+          <input type="checkbox">
+          <h3>I accept all terms & condition</h3>
+        </div> -->
+        <div class="input-box button">
+          <input type="Submit" value="S'inscrire">
+        </div>
+        <div class="text">
+          <h3>Voulez-vous connecter ? <a routerLink="/connexion">connexion</a></h3>
+        </div>
+      </form>
+    </div>
+  </body>
+
+</ion-content>

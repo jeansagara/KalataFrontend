@@ -1,0 +1,31 @@
+.global {
+    display: flex;
+    justify-content: center;
+    padding-top: 20PX;
+    box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.75);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.imgelection {
+    height: auto;
+    width: 10VH;
+    margin-left: 15PX;
+}
+
+.commencer {
+    height: 40PX;
+    width: 40VH;
+    background-color: #0013BF;
+    font-size: 20PX;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
