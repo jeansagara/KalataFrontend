@@ -1,25 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>vote</ion-title>
+    <div class="retour"  style="display: flex;">
+      <a routerLink="/tabs/categorievote"><ion-icon name="arrow-back-outline" style="color:black;"></ion-icon></a>
+        <ion-title>Vote</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-">
+<ion-content style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
 
   <div class="title" style="text-align: center;">
     <h1 style="font-size:25PX;font-weight:bold;">ELECTION PRESIDENTIELLE 2023</h1>
-    <h2  style="font-size: 19PX;font-weight:bold">Choisissez votre candidats</h2>
+    <h2 style="font-size: 19PX;font-weight:bold">Choisissez votre candidats</h2>
   </div>
 
-
+  <form>
+    <ion-searchbar class="recherche" placeholder="recherche candidat" name="searchText"></ion-searchbar>
+  </form>
   <ion-card style="background-color: #D8D8D8;">
     <ion-card-content>
       <div class="" style="display: flex;">
         <div class="candidatVote">
           <img class="candidat" src="/assets/images/Soumaila_cisse.png" style="border-radius: 05PX;"><img>
           <img class="parti" src="/assets/images/urd.png" style="border-radius: 05PX;"><img>
-          <ion-title style="padding-top: 20px;">Soumaîla Cissé</ion-title>
+          <h2 style="padding-top: 20px; color:black; font-weight:bold">Soumaîla Cissé</h2>
           <ion-button style="width: 80PX;" class="vote" (click)="presentAlert()">Vote</ion-button>
           <!--      
           <ion-popover trigger="popover-button1" [dismissOnSelect]="true">
@@ -34,7 +38,18 @@
           </ion-popover> -->
         </div>
 
-      </div> 
+      </div>
+    </ion-card-content>
+
+    <ion-card-content>
+      <div class="" style="display: flex;">
+        <div class="candidatVote">
+          <img class="candidat" src="/assets/images/Igor.jpg" style="border-radius: 05PX;"><img>
+          <img class="parti" src="/assets/images/adela.png" style="border-radius: 05PX;"><img>
+          <h2 style="padding-top: 20px; color:black; font-weight:bold">Igor Diarra</h2>
+          <ion-button style="width: 80PX;" id="popover-button1" (click)="presentAlert()">Vote</ion-button>
+        </div>
+      </div>
     </ion-card-content>
 
     <ion-card-content>
@@ -42,10 +57,10 @@
         <div class="candidatVote">
           <img class="candidat" src="/assets/images/Soumaila_cisse.png" style="border-radius: 05PX;"><img>
           <img class="parti" src="/assets/images/urd.png" style="border-radius: 05PX;"><img>
-          <ion-title style="padding-top: 20px;">Soumaîla Cissé</ion-title>
+          <h2 style="padding-top: 20px; color:black; font-weight:bold">Soumaîla Cissé</h2>
           <ion-button style="width: 80PX;" id="popover-button1" (click)="presentAlert()">Vote</ion-button>
         </div>
-      </div> 
+      </div>
     </ion-card-content>
 
     <ion-card-content>
@@ -53,29 +68,18 @@
         <div class="candidatVote">
           <img class="candidat" src="/assets/images/Soumaila_cisse.png" style="border-radius: 05PX;"><img>
           <img class="parti" src="/assets/images/urd.png" style="border-radius: 05PX;"><img>
-          <ion-title style="padding-top: 20px;">Soumaîla Cissé</ion-title>
+          <h2 style="padding-top: 20px; color:black; font-weight:bold">Soumaîla Cissé</h2>
           <ion-button style="width: 80PX;" id="popover-button1" (click)="presentAlert()">Vote</ion-button>
         </div>
-      </div> 
-    </ion-card-content>
-    
-    <ion-card-content>
-      <div class="" style="display: flex;">
-        <div class="candidatVote">
-          <img class="candidat" src="/assets/images/Soumaila_cisse.png" style="border-radius: 05PX;"><img>
-          <img class="parti" src="/assets/images/urd.png" style="border-radius: 05PX;"><img>
-          <ion-title style="padding-top: 20px;">Soumaîla Cissé</ion-title>
-          <ion-button style="width: 80PX;" id="popover-button1" (click)="presentAlert()">Vote</ion-button>
-        </div>
-      </div> 
+      </div>
     </ion-card-content>
 
-   
 
-    
+
+
   </ion-card>
 
-  
+
 
 
 

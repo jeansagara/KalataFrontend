@@ -5,18 +5,18 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url("/assets/images/background.jpg");
-}
+// body{
+//   min-height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background-image: url("/assets/images/background.jpg");
+// }
 .wrapper{
   position: relative;
   max-width: 430px;
   width: 100%;
-  background: #fff;
+  background: #D8D8D8;
   padding: 34px;
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
@@ -52,7 +52,7 @@ form .input-box input{
   outline: none;
   padding: 0 15px;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 400px;
   color: #333;
   border: 1.5px solid #C7BEBE;
   border-bottom-width: 2.5px;
@@ -69,16 +69,18 @@ form h3{
   font-size: 14px;
   font-weight: 500;
   margin-left: 10px;
+  // ici
+  margin-right: 10px;
 }
 .input-box.button input{
   color: #fff;
   letter-spacing: 1px;
   border: none;
-  background: #C4C4C4;
+  background:  #458EA2;
   cursor: pointer;
 }
 .input-box.button input:hover{
-  background: #458EA2;
+  // background: #458EA2;
   
 }
 form .text h3{
@@ -98,10 +100,11 @@ form .text h3 a:hover{
 .logo{
   height: 25vh;
   padding-left: 15%;
+  padding-right: 15%;
 }
 // inscript....
 .inscris{
-  margin-top: 35PX
+  margin-top: 25PX
 
 }
 a{

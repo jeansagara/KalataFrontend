@@ -1,30 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Kalata</ion-title>
+    <ion-title>Accueil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
   <div class="global">
-    <ion-title><b>KALATA</b> </ion-title>
-    <div class="log">
-      <img class="logo" src="assets/images/kalata.png/" alt="logo">
-    </div>
-    <div class="item">
-      <b>KALATA</b>  est une plateforme de vote en ligne conçue pour aider
-      les organisations à créer et gérer des votes électroniques et dans les bureaux de vote.
-    </div>
 
-    <div class="button">
-  <p>
-    <button style="font-weight:bold;" class="politique"><a routerLink="/politique">Régles</a></button>
-  </p>
-  <div class="button">
-    <p>
-      <button class="commencer"><a routerLink="/categorievote">Commencer</a></button>
-    </p>
+    <h1 style="text-align: center; font-weight:bolder; color:black">BIENVENUE</h1>
+
+    <img class="logo" src="assets/images/kalata.png/" alt="logo">
+
+    <audio class="son" controls style="width: 50%;"><source src="assets/images/vocal.wav" type="audio/mpeg"></audio>
+
+    <div class="item">
+      <span style="font-weight:bold;">KALATA</span> est une Application de vote en ligne vous
+      permettant de voter en toute transparence, et en toute sécurité sans vous deplacer.
+
+      <div class="politique"></div>
+      <button style="font-weight:bold;" ><a routerLink="/politique">Régles</a></button>
+    
+    </div>
+    
+    <button class="commencer"><a href="/categorievote">Commencer</a></button>
   </div>
-  
-  </div>
-   </div>
 </ion-content>

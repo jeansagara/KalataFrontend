@@ -1,12 +1,15 @@
 
 .candidat{
     height: 75%;
+    width: auto;
 
 }
 
 .parti{
     height: 30px;
     margin-right: 12px;
+    // ici
+    margin-left: 12px;
     margin-top: -11%;
    
 }
@@ -26,7 +29,6 @@
     padding: 20PX;
 }
 
-
 // Bouton popop
 button{
     background-color: white;
@@ -35,6 +37,8 @@ button{
     font-weight: bold;
     border-radius: 5px;
     margin-left: 10px;
+    // ici
+    margin-right: 10px;
     margin-bottom: 15px;
 }
 
@@ -47,7 +51,3 @@ a{
     text-decoration: none;
     color: white;
   }
-
-.vote{
-    
-}

@@ -16,9 +16,9 @@ body{
   position: relative;
   max-width: 430px;
   width: 100%;
-  background: #fff;
+  background: #D8D8D8;
   padding: 34px;
-  border-radius: 6px;
+  border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 .wrapper h2{
@@ -91,6 +91,8 @@ form h3{
   font-size: 14px;
   font-weight: 500;
   margin-left: 10px;
+  // ici
+  margin-right: 10px;
 }
 .input-box.button input{
   color: #fff;
@@ -114,9 +116,7 @@ form .text h3 a{
 form .text h3 a:hover{
   text-decoration: underline;
 }
-ion-list{
-  
-}
+
 a{
   text-decoration: none;
   color: white;

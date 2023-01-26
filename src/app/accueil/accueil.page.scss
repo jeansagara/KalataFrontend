@@ -1,12 +1,13 @@
 .global{
   text-align: center;
+  margin-bottom: 10PX;
 }
 .logo{
   height: 25vh;
 }
 .item{
   text-align: justify;
-  padding-top: 15PX;
+  padding-top: auto;
   margin-left: 15PX;
   margin-right: 15PX;
 }
@@ -20,9 +21,10 @@ button{
   border-radius: 5PX;
 }
 .politique{
-  float: left;
+  // float: left;
   background-color: #0013BF;
   color: white;
+  margin-bottom: 05PX;
 }
 a{
   text-decoration: none;
@@ -38,4 +40,27 @@ a{
   font-weight: bold;
   border-radius: 20px;
   margin-top:50px ;
+}
+h1{
+  box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.75);
+  margin-left: 10PX;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.son{
+  padding-top: 10px;
+}
+
+audio::webkit-media-controls-play-button{
+  background-color: red;
+}
+audio::webkit-media-controls-pause-button{
+  background-color: red;
+}
+audio::webkit-media-controls-mute-button{
+  background-color: red;
+}
+audio::webkit-media-controls-unmute-button{
+  background-color: red;
 }
