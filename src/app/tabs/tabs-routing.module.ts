@@ -10,21 +10,39 @@ const routes: Routes = [
     component: TabsPage,
     children :[
       {
-        path: 'connexion',
-        loadChildren: () => import('../connexion/connexion.module').then( m => m.ConnexionPageModule)
+        path: 'accueil',
+        loadChildren: () => import('../accueil/accueil.module').then( m => m.AccueilPageModule)
       },
      
 
       {
-        path: 'categorievote',
+        path: 'categorievote/:idtypevote',
         loadChildren: () => import('../categorievote/categorievote.module').then( m => m.CategorievotePageModule)
+      },
+
+      // {
+      //   path: 'projetlois/:idtypevote',
+      //   loadChildren: () => import('../categorievote/categorievote.module').then( m => m.CategorievotePageModule)
+      // },
+
+      {
+        path: 'resultatprolois',
+        loadChildren: () => import('../resultatprolois/resultatprolois.module').then( m => m.ResultatproloisPageModule)
       },
 
       {
         path: 'classement',
         loadChildren: () => import('../classement/classement.module').then( m => m.ClassementPageModule)
         },
+        {
+          path: 'typedevote',
+          loadChildren: () => import('../typedevote/typedevote.module').then( m => m.TypedevotePageModule)
+        },
       
+        {
+          path: 'vote/:id',
+          loadChildren: () => import('../vote/vote.module').then( m => m.VotePageModule)
+        },
         {
           path: '',
           redirectTo: 'tabs/accueil',
@@ -37,7 +55,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs/connexion',
+    redirectTo: 'tabs/accueil',
     pathMatch: 'full'
   },
 ];

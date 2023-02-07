@@ -1,0 +1,44 @@
+a{
+    text-decoration: none;
+    color: blue;
+  }
+
+// .mali{
+//     margin-left: 15PX;
+//     margin-right: 15PX;
+// }
+.mali {
+    display: flex;
+    // justify-content: space-between;
+    // width: 100%;
+    // align-items: center;
+}
+.texte{
+    // display: flex;
+    // align-items: center;
+    justify-content: center;
+    padding-top: 40PX;
+    font-size: 14PX;
+}
+ion-img {
+    height: 15vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15PX;
+}
+.texte span{
+    font-style: italic;
+}
+.citation{
+    background-color: blue;
+    color: white;
+    font-size: 14PX;
+    padding-left: 10px;
+    
+}
+
+
+
+
+
+ 

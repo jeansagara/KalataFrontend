@@ -1,16 +1,15 @@
 
 .candidat{
-    height: 75%;
+    height: 50%;
     width: auto;
 
 }
 
 .parti{
-    height: 30px;
-    margin-right: 12px;
-    // ici
-    margin-left: 12px;
-    margin-top: -11%;
+    height: 50px;
+    margin-right: 17px;
+    margin-top: -25%;
+    margin-left: 175px;
    
 }
 
@@ -46,8 +45,17 @@ button{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: fit-content;
 }
 a{
     text-decoration: none;
     color: white;
+  }
+
+  .cardi{
+    margin-bottom: 10PX;
+  }
+
+  .contentcard{
+
   }

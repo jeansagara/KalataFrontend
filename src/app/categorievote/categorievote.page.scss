@@ -8,23 +8,26 @@
 
 .imgelection {
     height: auto;
-    width: 10VH;
+    width: 15VH;
     margin-left: 15PX;
     margin-right: 15PX;
+
+    POSITION: relative;
+    LEFT: 33px;
+    margin-top: -15px;
 }
 
 .commencer {
-    height: 40PX;
-    width: 40VH;
-    background-color: #0013BF;
-    font-size: 20PX;
-    color: white;
-    font-weight: bold;
-    border-radius: 20px;
-    margin-top: 100px;
-    margin-left: 20px;
-    // ici
-    margin-right: 20px;
+  height: 40PX;
+  width: 40VH;
+  background-color: #0013BF;
+  font-size: 20PX;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .commencer a{
@@ -35,3 +38,86 @@ a {
     // text-decoration: none;
     color: white;
 }
+
+
+
+//===========================================STYLE DES PROJETS DE LOIS
+.imgdescription{
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 200px;
+    WIDTH: AUTO;
+  }
+  
+  ion-radio-group{--padding-top: 20px;}
+  .radiotest{
+  margin-top: 10px;
+  }
+  .radio-group {
+  --display: flex;
+  --align-items: center;
+  }
+  
+  label {
+  --margin: 0 10px;
+  }
+  
+  input[type="radio"] {
+  --display: none;
+  }
+  
+  input[type="radio"] + label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  padding-right: 25px;
+  }
+  
+  input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  }
+  
+  input[type="radio"]:checked + label {
+  font-weight: bold;
+  }
+  
+  input[type="radio"]:checked + label:before {
+  background-color: #007bff;
+  border-color: #007bff;
+  }
+  
+  input[type="radio"]:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+  .categobutton {
+    height: 40PX;
+    width: 40VH;
+    background-color: #0013BF;
+    font-size: 20PX;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-top: 60px;
+    // margin-left: 20px;
+    // margin-right: 20px;
+}
+  
+  a{
+    text-decoration: none;
+  }
+  
+  button{
+    // background-color: red;
+    height: 25PX;
+    WIDTH: 70px;
+  }
+  
+  

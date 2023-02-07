@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+  <div class="mali">
+    <ion-img src="assets/images/mali.png"></ion-img>
+    <div class="texte">
+      <p style="font-weight:bolder">REPUBLIQUE DU MALI</p>
+      <span>Un peuple - Un But - Une Foi</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 15PX;" class="bloc">
+    <div class="citation">
+      "VOTER EST UN DROIT, C'EST AUSSI UN DEVOIR CIVIQUE"
+    </div>
+  </div>
+
+  <ion-card  style="margin-top: 50PX;">
+    <ion-card-content style="background-color:#E9E9E9 ">
+      <!-- *ngFor -->
+    <ion-accordion-group *ngFor="let type of typeelection">
+      <ion-accordion  value="first" toggleIcon="caret-down-circle" toggleIconSlot="start">
+        <ion-item slot="header" color="light">
+          <ion-label style="font-size: 18PX;">{{type.nom}}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content"><a [routerLink]="['/tabs/categorievote',type.idtypevote]">Election {{type.nom}}</a></div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

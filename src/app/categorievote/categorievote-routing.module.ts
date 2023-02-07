@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: CategorievotePage
-  }
+  },
+  {
+    path: 'vote/:id',
+    loadChildren: () => import('../vote/vote.module').then( m => m.VotePageModule)
+  },
 ];
 
 @NgModule({

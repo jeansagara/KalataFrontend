@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Classement</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,9 +12,9 @@
   </div>
   <div class="classement">
     <div class="cuba">
-      <img class="un" src="/assets/images/pro.png" alt="">
-      <img class="deux" src="/assets/images/pro.png" alt="">
-      <img class="trois" src="/assets/images/pro.png" alt="">
+      <img class="un" src="../../assets/images/cheick.jpg" alt="">
+      <img class="deux" src="../../assets/images/cheick.jpg" alt="">
+      <img class="trois" src="../../assets/images/cheick.jpg" alt="">
       <span class="lu">01</span>     <span class="ma" >02</span>     <span class="me">03</span> 
     </div>
     <img style=" padding-top: 6%;" src="assets/images/roup.svg" alt="">
@@ -25,42 +25,32 @@
 </ion-content>
 
 <ion-content>
-<ion-card style="background-color: #D8D8D8;">
-  <div class="global">
-    <div class="date">
-      <span style="color:black;font-weight:bold">1. Naomie DEMBELE</span><br>
-      <span style="color:black; font-weight:bold">Parti : URD</span> <br>
-      <span style="color:red">Score : 68 %</span> <br>
+
+<ion-card style="background-color: #D8D8D8;" *ngFor="let t of classements">
+  <div class="global" >
+    <div class="date"  >
+      <span style="color:black;font-weight:bold" >{{t.idcandidat}}. {{t.nomcandidat}}</span><br>
+      <span style="color:black; font-weight:bold">Parti : {{t.nomparti}}</span> <br>
+      <span style="color:red">Score :{{t.pourcentage}} %</span> <br>
     </div>
     <div class="imgelection">
-      <img src="/assets/images/urd.png" alt="">
+      <img src="{{t.imagecandidat}}" alt="fghjkl">
     </div>
   </div>
 </ion-card>
-
+<!-- <ion-card style="background-color: #D8D8D8;">
+  <div class="global">
+    <div class="date">
+      <span style="color:black;font-weight:bold">1. Naomie DEMBELE</span><br>
+      <span style="color:black; font-weight:bold">Parti : URD</span> <br>
+      <span style="color:red">Score : 68 %</span> <br>
+    </div>
+    <div class="imgelection">
+      <img src="/assets/images/vote.png" alt="">
+    </div>
+  </div>
+</ion-card>
 <ion-card style="background-color: #D8D8D8;">
-  <div class="global">
-    <div class="date">
-      <span style="color:black;font-weight:bold">1. Naomie DEMBELE</span><br>
-      <span style="color:black; font-weight:bold">Parti : URD</span> <br>
-      <span style="color:red">Score : 68 %</span> <br>
-    </div>
-    <div class="imgelection">
-      <img src="/assets/images/vote.png" alt="">
-    </div>
-  </div>
-</ion-card><ion-card style="background-color: #D8D8D8;">
-  <div class="global">
-    <div class="date">
-      <span style="color:black;font-weight:bold">1. Naomie DEMBELE</span><br>
-      <span style="color:black; font-weight:bold">Parti : URD</span> <br>
-      <span style="color:red">Score : 68 %</span> <br>
-    </div>
-    <div class="imgelection">
-      <img src="/assets/images/vote.png" alt="">
-    </div>
-  </div>
-</ion-card><ion-card style="background-color: #D8D8D8;">
   <div class="global">
     <div class="date">
       <span style="color:black;font-weight:bold">1. Naomie DEMBELE</span><br>
@@ -137,7 +127,7 @@
       <img src="/assets/images/vote.png" alt="">
     </div>
   </div>
-</ion-card>
+</ion-card> -->
 
 
 </ion-content>

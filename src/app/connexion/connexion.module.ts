@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ConnexionPageRoutingModule } from './connexion-routing.module';
 
 import { ConnexionPage } from './connexion.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ConnexionPageRoutingModule
+    ConnexionPageRoutingModule,
+    RouterModule
   ],
   declarations: [ConnexionPage]
 })

@@ -1,46 +1,49 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Projet de loi</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-  <div class="title" style="text-align: center;">
-    <h2 style="font-size: 16PX;font-weight:bold; text-decoration:underline">ADOPTION DE L’AVORTEMENT</h2>
-  </div>
+<ion-content *ngFor="let s of proj" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
 
-  <img class="avortement" src="/assets/images/avortement.png"><img>
+  <ion-card>
+    <div class="title" style="text-align: center;">
+      <h1 style="font-size: 20PX;font-weight:bold; text-decoration:underline">{{s.titre}}</h1>
+    </div>
+    <img class="avortement" src="/assets/images/{{s.image}}"><img>
+  </ion-card>
 
 
-  <ion-card style="background-color: #D8D8D8; color:black;">
+  <ion-card style="background-color: #D8D8D8; color:black; margin-bottom:10px">
     <ion-card-header>
-      <ion-card-title style="font-size: 20PX;font-weight:bold">Tout savoir sur l'avortement</ion-card-title>
+      <ion-card-title style="font-size: 20PX;font-weight:bold">{{s.description}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-text [innerHTML]="truncateText">
       </ion-text>
-      <button *ngIf="!isFullText" ion-button color="secondary" (click)="showFullText()">Voir plus</button>
-      <button *ngIf="isFullText" ion-button color="secondary" (click)="showFullText()">Réduire</button>
+      <!-- <button *ngIf="!isFullText" ion-button color="secondary" (click)="showFullText()">Voir plus</button>
+      <button *ngIf="isFullText" ion-button color="secondary" (click)="showFullText()">Réduire</button> -->
+      <div class="radiotest">
+        <ion-radio-group class="radio" name="vote" [(ngModel)]="vote">
+          <ion-item class="ion-text-center">
+            <ion-label>Je vote pour</ion-label>
+            <ion-radio slot="start" value="1"></ion-radio>
+          </ion-item>
 
-      <div class="radio">
-        <ion-item class="ion-text-center">
-          <ion-label>Je vote pour</ion-label>
-          <ion-radio slot="start"></ion-radio>
-        </ion-item>
+          <ion-item class="ion-text-center">
+            <ion-label>Je vote contre</ion-label>
+            <ion-radio slot="start" value="-1"></ion-radio>
+          </ion-item>
 
-        <ion-item class="ion-text-center">
-          <ion-label>Je vote contre</ion-label>
-          <ion-radio slot="start"></ion-radio>
-        </ion-item>
-
-        <ion-item class="ion-text-center">
-          <ion-label>je m'abstiens</ion-label>
-          <ion-radio slot="start"></ion-radio>
-        </ion-item>
+          <ion-item class="ion-text-center">
+            <ion-label>je m'abstiens</ion-label>
+            <ion-radio slot="start" value="0"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
       </div>
-      <div class="button">
+      <div class="button"><!--<a routerLink="/resultatprolois">Voter</a>-->
         <p>
-          <button class="commencer"><a routerLink="/">Voter</a></button>
+           <button class="projetbutton" (click)="afficherValuevote()">voter</button> 
         </p>
       </div>
     </ion-card-content>

@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'projetdelois',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '',
+    redirectTo: 'accueil',
+    pathMatch: 'full'
+  },
   {
     path: 'projetdelois',
     loadChildren: () => import('./projetdelois/projetdelois.module').then( m => m.ProjetdeloisPageModule)
@@ -45,7 +45,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'vote',
+    path: 'vote/:id',
     loadChildren: () => import('./vote/vote.module').then( m => m.VotePageModule)
   },
   
@@ -53,13 +53,10 @@ const routes: Routes = [
     path: 'projetdelois',
     loadChildren: () => import('./projetdelois/projetdelois.module').then( m => m.ProjetdeloisPageModule)
   },
-  {
-    path: 'resultatprolois',
-    loadChildren: () => import('./resultatprolois/resultatprolois.module').then( m => m.ResultatproloisPageModule)
-  },
+ 
 
   {
-    path: 'categorievote',
+    path: 'categorievote/:idtypevote',
     loadChildren: () => import('./categorievote/categorievote.module').then( m => m.CategorievotePageModule)
   },
 
@@ -67,6 +64,9 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  
+
+  
 
 
 

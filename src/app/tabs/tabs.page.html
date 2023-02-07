@@ -1,20 +1,31 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>tabs</ion-title>
-  </ion-toolbar>
-</ion-header> -->
+<ion-toolbar>
+  
+<ion-buttons slot="primary">
+  <ion-button id="popover-button">
+    <i class="bi bi-three-dots"></i>
+  </ion-button>
+<ion-popover trigger="popover-button" [dismissOnSelect]="true" class="popUps">
+    <ng-template class="popUp">
+      <ion-content>
+        <ion-list >
+          <ion-item [routerLink] ="['/monprofil']">Mon profil</ion-item>
+          <ion-item (click)="logout()"  >Deconnexion</ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+</ion-popover>
+</ion-buttons>
+</ion-toolbar>
 
-<!-- <ion-content> -->
   <ion-tabs>
     <ion-tab-bar slot="bottom">
 
       <ion-tab-button tab="accueil">
         <ion-icon name="home-outline"></ion-icon>
         <ion-label>Accueil</ion-label>
-        <!-- <ion-badge>6</ion-badge> -->
       </ion-tab-button>
   
-      <ion-tab-button tab="categorievote">
+      <ion-tab-button tab="typedevote">
         <ion-icon name="map"></ion-icon>
         <ion-label>Vote</ion-label>
       </ion-tab-button>
@@ -24,10 +35,10 @@
         <ion-label>Classement</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="about">
+      <ion-tab-button tab="resultatprolois" routerLink="/resultatprolois">
         <ion-icon name="person-outline"></ion-icon>
-        <ion-label>Profil</ion-label>
+        <ion-label>Projet</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
-<!-- </ion-content> -->
+

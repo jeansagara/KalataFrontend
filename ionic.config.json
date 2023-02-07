@@ -1,5 +1,7 @@
 {
   "name": "Doniso",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AccueilPageRoutingModule } from './accueil-routing.module';
 
 import { AccueilPage } from './accueil.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AccueilPageRoutingModule
+    AccueilPageRoutingModule,
+    RouterModule
   ],
   declarations: [AccueilPage]
 })

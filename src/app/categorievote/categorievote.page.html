@@ -1,32 +1,86 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Categorie de vote</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
 
-  <div class="title" style="text-align: center;">
-    <h1 style="font-weight:bold;">ELECTION PRESIDENTIELLE 2023</h1>
+  <div class="" *ngFor="let liste of eliste let i = index">
+    <div class="title" style="text-align: center; margin-block: 40px;">
+      <h1 style="font-weight:bold;">{{liste.nomelection}}</h1>
+    </div>
+
+    <ion-card style="background-color: #D8D8D8;">
+      <h3 style="text-align: center; font-size:15PX; font-weight:bold; color:black">{{elec.soustitre}}</h3>
+
+      <div class="global">
+        <div class="date">
+          <P style="color: black;">Du : {{liste.datedebut}}</P>
+          <P style="color: black;">Au : {{liste.datefin}}</P>
+        </div>
+        <div class="imgelection">
+          <img src="../../assets/images/{{liste.images}}" alt="">
+        </div>
+      </div>
+    </ion-card>
+
+    <!-- button commencer -->
+    <button class="commencer"> <a [routerLink]="['/tabs/vote',this.id]">Commencer</a></button>
   </div>
 
-  <ion-card style="background-color: #D8D8D8;">
-    <h3 style="text-align: center; font-size:15PX; font-weight:bold; color:black">Election presidentiel</h3>
+
+
+  <div *ngIf="lesProjetsDeLois">
+    <div *ngFor="let s of lesProjetsDeLois">
+      <ion-card>
+        <div class="title" style="text-align: center;">
+          <h1 style="font-size: 20PX;font-weight:bold; text-decoration:underline">{{s.titre}}</h1>
+        </div>
+        <!-- /assets/images/{{s.image}} -->
+        <img class="avortement" src="/assets/images/{{s.image}}"><img>
+      </ion-card>
+
+
+      <ion-card style="background-color: #D8D8D8; color:black;">
+        <ion-card-header>
+          <ion-card-title style="font-size: 20PX;font-weight:bold">{{s.descrption}}  </ion-card-title>
+        </ion-card-header>
+        <!-- {{s.description} -->
+        <ion-card-content>
+          <ion-text [innerHTML]="truncateText">
+          </ion-text>
+          <button *ngIf="!isFullText" ion-button color="secondary" (click)="showFullText()">Voir plus</button>
+          <button *ngIf="isFullText" ion-button color="secondary" (click)="showFullText()">Réduire</button>
+          <div class="radiotest">
+            <ion-radio-group class="radio" name="vote" [(ngModel)]="vote">
+              <ion-item class="ion-text-center">
+                <ion-label>Je vote pour</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
     
-    <div class="global">
-      <div class="date">
-        <P style="color: black;">Du : 18/01/2023 02:14</P>
-        <P style="color: black;">Au : 18/01/2023 05:14</P>
-      </div>
-      <div class="imgelection">
-        <img src="/assets/images/vote.png" alt="">
-      </div>
+              <ion-item class="ion-text-center">
+                <ion-label>Je vote contre</ion-label>
+                <ion-radio slot="start" value="-1"></ion-radio>
+              </ion-item>
+    
+              <ion-item class="ion-text-center">
+                <ion-label>je m'abstiens</ion-label>
+                <ion-radio slot="start" value="0"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+          <div class="button">
+            <p>
+              <button class="categobutton" (click)="fairevote(s.idAdministration)">voter</button>
+            </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      
     </div>
-  </ion-card>
+  </div>
 
-  <span class="gps" style="margin-left: 20PX;margin-right: 20PX">Cliquez<a href="/" style="color: blue;"> ici</a> pour activez votre GPS</span> 
-
-  <!-- button commencer -->
-      <button class="commencer"><a routerLink="/vote">Commencer</a></button>
 
 </ion-content>
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProjetdeloisService } from '../services/projetdelois.service';
+import { VotesService } from '../services/votes.service';
 
 @Component({
   selector: 'app-projetdelois',
@@ -7,12 +9,58 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projetdelois.page.scss'],
 })
 export class ProjetdeloisPage implements OnInit {
-  fullText: string = "L'avortement se définit comme l'interruption avant son terme du processus de gestation, c'est-à-dire le développement qui commence à la conception par la fécondation d'un ovule par un spermatozoïde formant ainsi un œuf, se poursuit par la croissance de l'embryon, puis du fœtus, et qui s'achève normalement à terme par la naissance d'un nouvel individu de l'espèce.";
-  truncateText: string = this.fullText.substring(0, 60) + "...";
+  idAdministration: any;
+  titre: any = '';
+  image: any;
+  descrption: any;
+  datefin: any;
+  datedebut: any;
+  nbredeselus: any;
+  pour: any;
+  contre: any;
+  neutre: any;
+  totalvote: any;
+  status: any;
+  id: any;
+  proj: any
+  voterprojet: any;
+  user: any;
+  vote!: Number;
+  fullText!: string
+  truncateText!: string
+
+  constructor(private projetdelois: ProjetdeloisService,
+    private service: VotesService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+  idtypevote: any;
+
+
+  ngOnInit() {
+    this.user =
+      this.id = this.route.snapshot.params[`idtypevote`];
+    console.log("id path" + this.idtypevote)
+
+    this.projetdelois.afficherTypeElection().subscribe(data => {
+      this.proj = data
+      this.fullText = data[0].descrption
+      this.truncateText = this.fullText.substring(0, 60) + "...";
+      this.titre = data.titre
+      console.log(data)
+    })
+  }
+
+  fairevote() {
+    this.projetdelois.creervoteprojet(this.idAdministration, this.user, this.vote).subscribe(data => {
+      this.voterprojet = data
+
+    })
+  }
+
   isFullText: boolean = false;
 
   showFullText() {
-    if(this.isFullText) {
+    if (this.isFullText) {
       this.isFullText = false;
       this.truncateText = this.fullText.substring(0, 50) + "...";
     } else {
@@ -21,9 +69,9 @@ export class ProjetdeloisPage implements OnInit {
     }
   }
 
-  constructor() { }
 
-  ngOnInit() {
+  afficherValuevote() {
+    console.log(this.vote);
   }
 
 }
