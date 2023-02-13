@@ -13,4 +13,16 @@ export class ClassementelectionService {
   classementelection(): Observable<any>{
     return this.http.get(`http://localhost:8080/api/candidats/classement`);
   }
+
+// METHODE PERMET D'AFFICHER LES CANDIDATS DANS LE CLASSEMENT
+  afficherElectionandidat(): Observable<any> {
+    return this.http.get("http://localhost:8080/api/candidats/afficher");
+  }  
+
+  
+
+
+
+
+
 }

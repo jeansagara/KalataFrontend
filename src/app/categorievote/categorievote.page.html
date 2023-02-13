@@ -26,13 +26,17 @@
     </ion-card>
 
     <!-- button commencer -->
-    <button class="commencer"> <a [routerLink]="['/tabs/vote',this.id]">Commencer</a></button>
+    <button class="commencer"> <a [routerLink]="['/tabs/vote',1]">Commencer</a></button>
   </div>
 
+  <!-- ELECTION -->
 
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+
+<!-- PROJET DE LOIS -->
 
   <div *ngIf="lesProjetsDeLois">
-    <div *ngFor="let s of lesProjetsDeLois">
+    <div *ngFor="let s of lesProjetsDeLois; let i=index">
       <ion-card>
         <div class="title" style="text-align: center;">
           <h1 style="font-size: 20PX;font-weight:bold; text-decoration:underline">{{s.titre}}</h1>
@@ -41,17 +45,23 @@
         <img class="avortement" src="/assets/images/{{s.image}}"><img>
       </ion-card>
 
-
+      <div class="data">
+        <div class="date">
+          <P style="color: black;">Du : {{s.datedebut}}</P>
+          <P style="color: black;">Au : {{s.datefin}}</P>
+        </div>
+      </div>
       <ion-card style="background-color: #D8D8D8; color:black;">
         <ion-card-header>
-          <ion-card-title style="font-size: 20PX;font-weight:bold">{{s.descrption}}  </ion-card-title>
+          <ion-card-title style="font-size: 16PX; font-weight:bold" [innerHTML]="truncateText[i]">  </ion-card-title>
         </ion-card-header>
         <!-- {{s.description} -->
+
         <ion-card-content>
-          <ion-text [innerHTML]="truncateText">
+          <ion-text >
           </ion-text>
-          <button *ngIf="!isFullText" ion-button color="secondary" (click)="showFullText()">Voir plus</button>
-          <button *ngIf="isFullText" ion-button color="secondary" (click)="showFullText()">Réduire</button>
+          <button *ngIf="!isFullText[i]" ion-button color="secondary" (click)="showFullText(i)">Voir plus</button>
+          <button *ngIf="isFullText[i]" ion-button color="secondary" (click)="showFullText(i)">Réduire</button>
           <div class="radiotest">
             <ion-radio-group class="radio" name="vote" [(ngModel)]="vote">
               <ion-item class="ion-text-center">
@@ -72,7 +82,7 @@
           </div>
           <div class="button">
             <p>
-              <button class="categobutton" (click)="fairevote(s.idAdministration)">voter</button>
+              <button class="categobutton" (click)="fetchLocation()" (click)="fairevote(s.idAdministration)">voter</button>
             </p>
           </div>
         </ion-card-content>
@@ -80,7 +90,5 @@
       
     </div>
   </div>
-
-
 </ion-content>
 

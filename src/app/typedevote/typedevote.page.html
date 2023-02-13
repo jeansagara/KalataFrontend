@@ -16,21 +16,47 @@
 
   <div style="margin-top: 15PX;" class="bloc">
     <div class="citation">
-      "VOTER EST UN DROIT, C'EST AUSSI UN DEVOIR CIVIQUE"
+      " VOTER EST UN DROIT, C'EST AUSSI UN DEVOIR CIVIQUE POUR UN CITOYEN "
     </div>
   </div>
 
-  <ion-card  style="margin-top: 50PX;">
+  <!-- <ion-card style="margin-top: 50PX;">
     <ion-card-content style="background-color:#E9E9E9 ">
-      <!-- *ngFor -->
-    <ion-accordion-group *ngFor="let type of typeelection">
-      <ion-accordion  value="first" toggleIcon="caret-down-circle" toggleIconSlot="start">
-        <ion-item slot="header" color="light">
-          <ion-label style="font-size: 18PX;">{{type.nom}}</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content"><a [routerLink]="['/tabs/categorievote',type.idtypevote]">Election {{type.nom}}</a></div>
-      </ion-accordion>
-    </ion-accordion-group>
-  </ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="first" toggleIcon="caret-down-circle" toggleIconSlot="start">
+          <ion-item slot="header" color="light">
+            <ion-label style="font-size: 18PX;">Election</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content" *ngIf="election && election.idtypevote"><a [routerLink]="['/tabs/categorievote',election.idtypevote]">Election
+              {{election.nom}}</a></div>
+        </ion-accordion>
+      </ion-accordion-group>
+
+      <ion-accordion-group *ngIf="showElecteur">
+        <ion-accordion value="first" toggleIcon="caret-down-circle" toggleIconSlot="start">
+          <ion-item slot="header" color="light">
+            <ion-label style="font-size: 18PX;">Projet de lois</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content" *ngIf="projetdelois && projetdelois.idtypevote"><a [routerLink]="['/tabs/categorievote',projetdelois.idtypevote]">Election
+              {{projetdelois.nom}}</a></div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-card style="margin-top: 50PX;">
+    <ion-card-content style="background-color:#E9E9E9 ">
+      <ion-accordion-group *ngFor="let type of typeelection">
+        <ion-accordion value="first" toggleIcon="caret-down-circle" toggleIconSlot="start">
+          <ion-item slot="header" color="light">
+            <ion-label style="font-size: 18PX;">{{type.nom}}</ion-label>
+
+
+          </ion-item>
+          <div class="ion-padding" slot="content"><a [routerLink]="['/tabs/categorievote',type.idtypevote]">Election
+              {{type.nom}}</a></div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
   </ion-card>
 </ion-content>

@@ -48,7 +48,17 @@ export class InscriptionPage implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.forme
-        this.route.navigateByUrl("/tabs/connexion")
+        
+        this.sleep(2000).then(() => {
+          // Call function after the sleep()
+          console.log('Sleep function is working!') 
+          this.route.navigate(['/connexion'])
+        }
+          )
+        //=========================================================
+
+       
+        
 
       },
       error: err => {
@@ -56,5 +66,9 @@ export class InscriptionPage implements OnInit {
         this.isSignUpFailed = true;
       }
     });
+  }
+  // FONCTION POUR PRENDRE UN PEU DE TEMPS AVANT D'ÊTRE REDIRIGER
+  sleep(duration:any) {
+    return new Promise((resolve) => setTimeout(resolve, duration)); 
   }
 }

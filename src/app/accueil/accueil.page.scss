@@ -22,9 +22,11 @@ button{
 }
 .politique{
   // float: left;
-  background-color: #0013BF;
+  // background-color: #0013BF;
   color: white;
   margin-bottom: 05PX;
+  width: 100%;
+  --background:  #0013BF;
 }
 a{
   text-decoration: none;

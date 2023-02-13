@@ -41,20 +41,15 @@ export class ProjetdeloisPage implements OnInit {
       this.id = this.route.snapshot.params[`idtypevote`];
     console.log("id path" + this.idtypevote)
 
-    this.projetdelois.afficherTypeElection().subscribe(data => {
-      this.proj = data
-      this.fullText = data[0].descrption
-      this.truncateText = this.fullText.substring(0, 60) + "...";
-      this.titre = data.titre
-      console.log(data)
-    })
-  }
-
-  fairevote() {
-    this.projetdelois.creervoteprojet(this.idAdministration, this.user, this.vote).subscribe(data => {
-      this.voterprojet = data
-
-    })
+    // this.projetdelois.afficherTypeElection().subscribe(data => {
+    //   this.proj = data
+    //   console.log("-------------fdattyt---"+data)
+    //   this.fullText = data[0].descrption
+    //   console.log("---------fulltext------------"+this.fullText)
+    //   this.truncateText = this.fullText.substring(0, 60) + "...";
+    //   this.titre = data.titre
+    //   console.log(data)
+    // })
   }
 
   isFullText: boolean = false;
@@ -67,6 +62,13 @@ export class ProjetdeloisPage implements OnInit {
       this.isFullText = true;
       this.truncateText = this.fullText;
     }
+  }
+
+    fairevote() {
+    this.projetdelois.creervoteprojet(this.idAdministration, this.user, this.vote).subscribe(data => {
+      this.voterprojet = data
+
+    })
   }
 
 

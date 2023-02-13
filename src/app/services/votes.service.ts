@@ -26,10 +26,18 @@ export class VotesService {
 
   
   // VOTER POUR UN CANDIDATS AUX CHOIX
-  creervotecandidats(idutilisateur:Number,idelection : Number, id_candidat : Number): Observable<any> {
+  // creervotecandidats(idutilisateur:Number,idelection : Number, id_candidat : Number): Observable<any> {
+  // //  let data = new FormData()
+  // console.log("iduser"+idutilisateur);
+  //  // return this.http.post(`http://localhost:8080/api/vote/creervote/${idutilisateur}/${idelection}/${id_candidat}`,)  
+  //  return this.http.post(`http://localhost:8080/api/vote/creervote/${idutilisateur}/${idelection}/${id_candidat}`,{})                         
+  // }
+
+
+    creervotecandidats(idutilisateur:Number,idelection : Number, id_candidat : Number,latitude:any,longitude:any): Observable<any> {
   //  let data = new FormData()
   console.log("iduser"+idutilisateur);
    // return this.http.post(`http://localhost:8080/api/vote/creervote/${idutilisateur}/${idelection}/${id_candidat}`,)  
-   return this.http.post(`http://localhost:8080/api/vote/creervote/${idutilisateur}/${idelection}/${id_candidat}`,{})                         
+   return this.http.post(`http://localhost:8080/api/vote/creervote/${idutilisateur}/${idelection}/${id_candidat}/${latitude}/${longitude}`,{})                         
   }
 }

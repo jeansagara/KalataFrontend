@@ -12,11 +12,24 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { httpInterceptorProviders } from 'src/helpers/http.interceptor';
 
+import { WebView } from '@awesome-cordova-plugins/ionic-webview/ngx';
+import { ImagePicker } from '@awesome-cordova-plugins/image-picker/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+
+
+
+
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, 
   Ng2SearchPipeModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, httpInterceptorProviders],
+  providers: [
+    ImagePicker, 
+    WebView,
+    NativeGeocoder,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

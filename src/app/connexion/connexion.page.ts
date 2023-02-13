@@ -19,6 +19,8 @@ export class ConnexionPage implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
+  showElecteur = true;
+
 
   constructor(private authService: AuthService, private storageService: StorageService,private route:Router) { }
 
@@ -26,6 +28,7 @@ export class ConnexionPage implements OnInit {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
+      this.showElecteur = this.roles.includes('ROLE_ELECTEUR');
     }
   }
 

@@ -7,6 +7,7 @@ const routes: Routes = [
     redirectTo: 'accueil',
     pathMatch: 'full'
   },
+
   {
     path: 'projetdelois',
     loadChildren: () => import('./projetdelois/projetdelois.module').then( m => m.ProjetdeloisPageModule)
@@ -64,14 +65,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
-  
-
-  
-
-
-
-
-
+ 
 
 ];
 

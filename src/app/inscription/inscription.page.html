@@ -17,18 +17,17 @@
         <div class="input-box">
           <input type="tel" placeholder="N° telephone" required [(ngModel)]="form.telephone" name="telephone" >
         </div>
-        <div class="input-box">
+        <!-- <div class="input-box">
           <input type="text" placeholder="Sexe" required [(ngModel)]="form.sexe" name="sexe" >
-        </div>
-        <!-- <ion-list>
-          <ion-item> -->
-          
-          <!-- <ion-select placeholder="Genre" [multiple]="true"   [(ngModel)]="form.sexe" name="sexe">
+        </div> -->
+        <ion-list>
+          <ion-item>
+          <ion-select placeholder="Genre" [multiple]="false"   [(ngModel)]="form.sexe" name="sexe">
               <ion-select-option value="homme">Homme</ion-select-option>
               <ion-select-option value="femme">Femme</ion-select-option> -->
-            <!-- </ion-select> -->
-          <!-- </ion-item>
-        </ion-list> -->
+            </ion-select>
+          </ion-item>
+        </ion-list>
 
 
 

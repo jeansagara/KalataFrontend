@@ -4,24 +4,38 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngFor="let s of proj" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+<ion-content *ngFor="let s of proj"
+  style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
   <div class="title" style="text-align: center;">
     <h1 style="font-size: 25PX;font-weight:bold">Résultats de vote</h1>
   </div>
 
   <ion-card style="background-color: #EEEEEE; padding-left:30px;; padding-right:30px;">
     <ion-card>
-      <ion-card-content style="background-color: #15F048;font-weight:bolder; color:black">
-        <h2 style="font-weight:bolder; color:black">POUR</h2>
-        <h2 style="font-weight:bolder; color:black">{{s.pour}}</h2>
+
+      <ion-card-content>
+        <div class="unte">
+          <h2 style="font-weight:bolder; color:black">POUR</h2>
+          <h2 class="chiffre" style="font-weight:bolder; color:black">{{s.pour}}</h2>
+          <img class="imhge" src="assets/images/pour.png" alt="">
+        </div>
       </ion-card-content>
-      <ion-card-content  style="background-color: #FD5151;">
-        <h2 style="font-weight:bolder; color:black">CONTRE</h2>
-        <h2 style="font-weight:bolder; color:black">{{s.contre}}</h2>
+
+      <ion-card-content>
+        <div class="unt">
+          <h2 style="font-weight:bolder; color:black">CONTRE</h2>
+          <h2 class="chiffre" style="font-weight:bolder; color:black">{{s.contre}}</h2>
+          <img class="imhge" src="assets/images/contre.png" alt="">
+        </div>
       </ion-card-content>
+
       <ion-card-content style="background-color: white;">
-        <h2 style="font-weight:bolder; color:black">NEUTRE</h2>
-        <h2 style="font-weight:bolder; color:black">{{s.neutre}}</h2>
+        <div class="unt">
+          <h2 style="font-weight:bolder; color:black">NEUTRE</h2>
+          <h2 class="chiffre" style="font-weight:bolder; color:black">{{s.neutre}}</h2>
+          <img class="imhge" src="assets/images/neutre.png" alt="">
+
+        </div>
       </ion-card-content>
     </ion-card>
   </ion-card>
