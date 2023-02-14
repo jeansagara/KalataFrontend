@@ -16,6 +16,10 @@ import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@io
 
 })
 export class CategorievotePage implements OnInit {
+  userLatitude: any
+  userLongitude: any
+
+
   typeelection: any;
   id: any
   nomelection: any
@@ -41,7 +45,7 @@ export class CategorievotePage implements OnInit {
   role: any;
   // LOCATION
   options: NativeGeocoderOptions = {
-    useLocale : true,
+    useLocale: true,
     maxResults: 5
   }
   geoAddress: any;
@@ -58,47 +62,52 @@ export class CategorievotePage implements OnInit {
     private router: Router,
     private projetdeloiService: ProjetdeloisService) { }
 
-      async fetchLocation() {
+  async fetchLocation() {
     const location = await Geolocation.getCurrentPosition();
     console.log('location = ', location);
-    this.nativeGeocoder.reverseGeocode(location.coords.latitude, 
-      location.coords.longitude, 
+    this.nativeGeocoder.reverseGeocode(location.coords.latitude,
+      location.coords.longitude,
       this.options)
-    .then((result: NativeGeocoderResult[]) => {
-      console.log('result = ', result);
-      console.log('result 0 = ', result[0]);
+      .then((result: NativeGeocoderResult[]) => {
+        console.log('result = ', result);
+        console.log('result 0 = ', result[0]);
 
-      this.geoAddress = this.generateAddress(result[0]);
-  console.log('location address = ', this.geoAddress);
-});
+        this.geoAddress = this.generateAddress(result[0]);
+        console.log('location address = ', this.geoAddress);
+      });
+
+
+      this.userLatitude = location.coords.latitude
+      this.userLongitude = location.coords.longitude
+    
 
   }
 
-  generateAddress(addressObj:any) {
-    let obj:any[] = [];
-    let uniqueNames:any[] = [];
+  generateAddress(addressObj: any) {
+    let obj: any[] = [];
+    let uniqueNames: any[] = [];
     let address = "";
-    for(let key in addressObj){
-      if(key !== 'areasOfInterest'){
+    for (let key in addressObj) {
+      if (key !== 'areasOfInterest') {
         obj.push(addressObj[key]);
       }
     }
 
- let i = 0;
-obj.forEach(value => {
-  if (uniqueNames.indexOf(obj[i]) === -1) {
-    uniqueNames.push(obj[i]);
-  }
-  i++;
-});
+    let i = 0;
+    obj.forEach(value => {
+      if (uniqueNames.indexOf(obj[i]) === -1) {
+        uniqueNames.push(obj[i]);
+      }
+      i++;
+    });
 
-uniqueNames.reverse();
-for (const val of uniqueNames) {
-  if (uniqueNames[val].length > 0) {
-    address += uniqueNames[val] + ', ';
-  }
-}
-return address.slice(0, -2);
+    uniqueNames.reverse();
+    for (const val of uniqueNames) {
+      if (uniqueNames[val].length > 0) {
+        address += uniqueNames[val] + ', ';
+      }
+    }
+    return address.slice(0, -2);
 
   }
 
@@ -111,6 +120,9 @@ return address.slice(0, -2);
   showElecteur = false;
 
   ngOnInit() {
+
+    this.fetchLocation()
+
     this.user = this.storageService.getUser().id;
 
     if (this.storageService.isLoggedIn()) {
@@ -172,7 +184,7 @@ return address.slice(0, -2);
       })
     }
 
-    
+
   }
 
 
@@ -197,23 +209,23 @@ return address.slice(0, -2);
 
   fairevote(idAdministratio: any) {
     console.log(this.user)
-    this.projetdeloiService.creervoteprojet(idAdministratio, 
-      this.user, this.vote).subscribe(data => {
+    this.projetdeloiService.creervoteprojet(idAdministratio,this.user,this.vote,this.userLatitude,this.userLongitude,).subscribe(data => {
       this.voterprojet = data
-      console.log(data)
+        console.log(data)
 
-      // Swal message de retour lors du clique de botton
-      Swal.fire({
+        // Swal message de retour lors du clique de botton
+        Swal.fire({
 
-        heightAuto: false,
-        icon: 'success',
-        title: 'Voté avec succès',
-        showConfirmButton: false,
-        timer: 1500
+          heightAuto: false,
+          icon: 'success',
+          title: 'Voté avec succès',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
       })
-
-    })
   }
+  
 
   afficherValuevote() {
     console.log(this.vote);

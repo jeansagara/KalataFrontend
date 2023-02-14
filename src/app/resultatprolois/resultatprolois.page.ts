@@ -21,6 +21,8 @@ export class ResultatproloisPage implements OnInit {
   vote!: Number;
   voterprojet: any;
   resultatsprojets: any;
+  userLatitude: any;
+  userLongitude: any;
 
   constructor(private projetdelois: ProjetdeloisService,
     private route: ActivatedRoute,
@@ -40,7 +42,7 @@ export class ResultatproloisPage implements OnInit {
 
   }
   fairevote() {
-    this.projetdelois.creervoteprojet(this.idAdministration, this.user, this.vote).subscribe(data => {
+    this.projetdelois.creervoteprojet(this.idAdministration, this.user, this.vote, this.userLatitude,this.userLongitude).subscribe(data => {
       this.voterprojet = data
 
     })

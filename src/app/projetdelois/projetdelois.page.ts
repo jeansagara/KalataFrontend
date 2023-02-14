@@ -28,6 +28,8 @@ export class ProjetdeloisPage implements OnInit {
   vote!: Number;
   fullText!: string
   truncateText!: string
+  userLatitude: any;
+  userLongitude: any;
 
   constructor(private projetdelois: ProjetdeloisService,
     private service: VotesService,
@@ -65,11 +67,12 @@ export class ProjetdeloisPage implements OnInit {
   }
 
     fairevote() {
-    this.projetdelois.creervoteprojet(this.idAdministration, this.user, this.vote).subscribe(data => {
+    this.projetdelois.creervoteprojet(this.idAdministration, this.user, this.vote,this.userLatitude,this.userLongitude).subscribe(data => {
       this.voterprojet = data
 
     })
   }
+
 
 
   afficherValuevote() {

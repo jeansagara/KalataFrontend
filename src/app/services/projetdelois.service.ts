@@ -20,9 +20,10 @@ export class ProjetdeloisService {
     return this.http.get(`http://localhost:8080/api/projetdelois/afficher/${id}`);
   }
 
-  creervoteprojet(idAdministration:Number,idutilisateur : Number, vote : Number): Observable<any> {
-    let data = new FormData()
-    return this.http.post(`http://localhost:8080/api/vote/voteprojets/${idAdministration}/${idutilisateur}/${vote}`,{})
+  // projet de lois
+  creervoteprojet(idAdministration:Number,idutilisateur : Number, vote : Number,latitude:any,longitude:any): Observable<any> {
+    console.log("iduser"+idutilisateur);
+    return this.http.post(`http://localhost:8080/api/vote/voteprojets/${idAdministration}/${idutilisateur}/${vote}/${latitude}/${longitude}`,{})  
   }
   
 

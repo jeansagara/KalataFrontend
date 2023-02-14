@@ -194,7 +194,10 @@ userLongitude:any
     this.idelection = 1
     console.log(this.idelection, + "oddddddddddddddddddddddddddddd")
     console.log("Altitudes "+this.userLatitude)
-    this.service.creervotecandidats(this.currentUser, this.idelection, idcandid,this.userLatitude,this.userLongitude).subscribe(data => {
+    this.service.creervotecandidats(this.currentUser, 
+      this.idelection, idcandid,
+      this.userLatitude,
+      this.userLongitude).subscribe(data => {
       console.log(data);
     })
 
