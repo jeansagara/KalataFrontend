@@ -25,16 +25,18 @@
 </ion-toolbar>
 
 <ion-content >
+
   <ion-card  *ngFor="let c of classements">
     
     <div class="global" >
       <div class="date">
         <span style="color:black;font-weight:bold">{{c.nomcandidat}}</span><br>
         <span style="color:black; font-weight:bold">Parti :{{c.nomparti}}</span> <br>
-        <span style="color:red" class="scrore">Score :{{c.pourcentage}} </span> <br>
+        <span style="color:red" class="scrore">Score :{{c.pourcentage}} %</span> <br>
       </div>
-      <div class="imgelection">
-        <img src="{{c.imagecandidat}} " alt="fghjkl">
+      <div class="imgelection"   >
+
+        <img src="{{c.imagecandidat}}"  alt="fghjkl">
       </div>
     </div>
   </ion-card>

@@ -46,7 +46,7 @@
   height: 52px;
   margin: 18px 0;
 }
-form .input-box input{
+form .input-box input,.ii{
   height: 100%;
   width: 100%;
   outline: none;
@@ -58,6 +58,7 @@ form .input-box input{
   border-bottom-width: 2.5px;
   border-radius: 13px;
   transition: all 0.3s ease;
+  vertical-align: middle;
 }
 
 form .policy{

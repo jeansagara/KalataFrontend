@@ -24,7 +24,8 @@ export class TypedevotePage implements OnInit {
   election: any;
   id:any
   user: any;
-  constructor(private service:VotesService,private route:ActivatedRoute,private storageService:StorageService ) { }
+  role: any;
+  constructor(private serviceStorage:StorageService,private service:VotesService,private route:ActivatedRoute,private storageService:StorageService ) { }
 
   ngOnInit() {
     this.user = this.storageService.getUser().roles;
@@ -35,7 +36,8 @@ export class TypedevotePage implements OnInit {
       this.showElecteur = this.roles.includes('ROLE_ELECTEUR');
     }
     
-
+    this.role = this.serviceStorage.getUser().roles[0];
+    console.log(this.role)
 
     // console.log("avant mes donnees=======================");
     this.service.afficherTypeElection().subscribe(data=>{
@@ -47,6 +49,7 @@ export class TypedevotePage implements OnInit {
       console.log("mes elections"+ JSON.stringify(this.typeelection));
     })
   }
+
   
 
 }

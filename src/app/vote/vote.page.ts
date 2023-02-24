@@ -10,9 +10,7 @@ import { VotesService } from '../services/votes.service';
 
 // Location
 import { Geolocation } from '@capacitor/geolocation';
-import { NativeGeocoder, 
-  NativeGeocoderResult, 
-  NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 
 
 @Component({
@@ -209,8 +207,9 @@ userLongitude:any
       icon: 'success',
       title: 'Voté avec succès',
       showConfirmButton: false,
-      timer: 1500
+      timer: 2500
     })
+    
   }
 
 }

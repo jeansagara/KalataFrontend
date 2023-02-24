@@ -39,7 +39,8 @@ export class ClassementPage implements OnInit {
       this.pourcentage=data.pourcentage
       this.idcandidat=data.idcandidat
       this.nomcandidat=data.nomcandidat
-    console.log("mes ee conhggfffgh",this.classements)
+
+   console.log("mes ee conhggfffgh"+JSON.stringify( this.classements))
      
     });
 

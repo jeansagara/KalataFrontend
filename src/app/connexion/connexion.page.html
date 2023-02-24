@@ -7,28 +7,24 @@
     <h2>Connexion</h2>
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="input-box">
-        <input placeholder="N° Biométrique" type="text"
-        class="form-control"
-        name="biometrieOrTelephone"
-        [(ngModel)]="form.biometrieOrTelephone"
-        required
-        #biometrieOrTelephone="ngModel"
-        [ngClass]="{ 'is-invalid': f.submitted && biometrieOrTelephone.errors }">
+        <input placeholder="N° Biométrique" type="text" class="form-control" name="biometrieOrTelephone"
+          [(ngModel)]="form.biometrieOrTelephone" required #biometrieOrTelephone="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && biometrieOrTelephone.errors }">
 
         <div *ngIf="biometrieOrTelephone.errors && f.submitted" class="invalid-feedback">
           Username is required!
         </div>
       </div>
 
-      <div class="input-box">
-        <input placeholder="Mot de passe" type="password"
-        class="form-control"
-        name="password"
-        [(ngModel)]="form.password"
-        required
-        minlength="6"
-        #password="ngModel"
-        [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+      <div class="input-box" >
+        <div class="form-control ii" style="display: flex;">
+          <input placeholder="Mot de passe" type="password"  name="password" style="outline: none; border: none;"
+          [(ngModel)]="form.password" required minlength="6" #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }" [type]="type ? 'password' : 'text'">
+          <ion-icon [name]="type ? 'eye-off' : 'eye'" slot="end" color="dark" (click)="changeType()" style="font-family: 'Poppins';
+          font-style: normal; opacity: 0.5; margin-top: 10%;">
+        </ion-icon>
+        </div>
         <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
           <div *ngIf="password.errors['required']">Password is required</div>
           <div *ngIf="password.errors['minlength']">
@@ -39,7 +35,6 @@
 
 
       <div class="text">
-        <h3 class="mdp" style="margin-left: -05px;"><a routerLink="/accueil">Mot de passe oublié ?</a></h3>
         <h3 class="inscris" style="margin-left: 0px;">Veillez-vous inscrire ici ! <a
             routerLink="/inscription">Inscription</a></h3>
       </div>
@@ -52,18 +47,13 @@
         </div>
       </div>
 
-      
+
 
 
     </form>
     <div class="alert alert-success" *ngIf="isLoggedIn">
       Logged in as {{ roles }}.
-
-      <!-- <ion-item  >Deconnexion</ion-item> -->
-        <!-- <ion-icon name="power"></ion-icon>
-        Déconnexion
-      </button> -->
-          </div>
+    </div>
   </div>
 
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -66,6 +67,15 @@ export class InscriptionPage implements OnInit {
         this.isSignUpFailed = true;
       }
     });
+            // Swal message de retour lors du clique de botton
+            Swal.fire({
+
+              heightAuto: false,
+              icon: 'success',
+              title: 'Enregistrer avec succès',
+              showConfirmButton: false,
+              timer: 1500
+            })
   }
   // FONCTION POUR PRENDRE UN PEU DE TEMPS AVANT D'ÊTRE REDIRIGER
   sleep(duration:any) {

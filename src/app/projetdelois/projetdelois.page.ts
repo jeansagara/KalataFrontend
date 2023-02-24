@@ -42,16 +42,6 @@ export class ProjetdeloisPage implements OnInit {
     this.user =
       this.id = this.route.snapshot.params[`idtypevote`];
     console.log("id path" + this.idtypevote)
-
-    // this.projetdelois.afficherTypeElection().subscribe(data => {
-    //   this.proj = data
-    //   console.log("-------------fdattyt---"+data)
-    //   this.fullText = data[0].descrption
-    //   console.log("---------fulltext------------"+this.fullText)
-    //   this.truncateText = this.fullText.substring(0, 60) + "...";
-    //   this.titre = data.titre
-    //   console.log(data)
-    // })
   }
 
   isFullText: boolean = false;

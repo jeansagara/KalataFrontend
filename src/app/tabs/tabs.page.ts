@@ -8,7 +8,10 @@ import { StorageService } from '../services/storage.service';
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
 })
-export class TabsPage  {
+export class TabsPage implements OnInit {
+  User:any
+  roles: string[] = [];
+  monRole: any;
 
   constructor(private authService:AuthService,private storageService:StorageService,private route:Router) { }
   logout(): void {
@@ -27,6 +30,17 @@ export class TabsPage  {
   }
 
   ngOnInit() {
+    this.User= this.storageService.getUser();
+    console.log("id path" + this.User)
+  if(this.User.id != null){
+    this.roles = this.storageService.getUser().roles;
+    console.log(this.roles);
+if(this.roles[0] !='ROLE_ELECTEUR'){
+  this.monRole = this.roles[0]
+}
+
+  }
+
   }
 
 }

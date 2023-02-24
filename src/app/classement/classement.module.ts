@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { ClassementPageRoutingModule } from './classement-routing.module';
 import { ClassementPage } from './classement.page';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     IonicModule,
     Ng2SearchPipeModule,
-    ClassementPageRoutingModule
+    ClassementPageRoutingModule,
+    RouterModule
   ],
   declarations: [ClassementPage]
 })

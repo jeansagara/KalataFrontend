@@ -192,7 +192,7 @@ export class CategorievotePage implements OnInit {
   GoCate(id: number) {
     return this.router.navigate(['/vote', id])
   }
-  // LES TRUNCATES POUR POUVOIR AFFICHER ET CACHER LE CONTENU
+  // LES TRUNCATES POUR AFFICHER ET CACHER LE CONTENU
 
   isFullText = this.istabFullText;
 

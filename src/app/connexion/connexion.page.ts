@@ -18,6 +18,7 @@ export class ConnexionPage implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  type = true;
 
   showElecteur = true;
 
@@ -30,6 +31,10 @@ export class ConnexionPage implements OnInit {
       this.roles = this.storageService.getUser().roles;
       this.showElecteur = this.roles.includes('ROLE_ELECTEUR');
     }
+  }
+
+  changeType() {
+    this.type = !this.type;
   }
 
   onSubmit(): void {
@@ -45,7 +50,7 @@ export class ConnexionPage implements OnInit {
         if(this.isLoggedIn == true){
         this.route.navigateByUrl("/tabs/accueil")
         }
-      // this.reloadPage();
+    //  this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;
