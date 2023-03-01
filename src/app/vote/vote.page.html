@@ -20,7 +20,7 @@
   
   <ion-card style="background-color: #D8D8D8;">
     <div class="contentcard">
-    <ion-card-content class="cardi" *ngFor="let cand of candidats">
+    <ion-card-content class="cardi" *ngFor="let cand of candidats | filter:searchText">
       <div class="" style="display: flex;">
         <div class="candidatVote">
           <img class="candidat" src="{{cand.imagecandidat}}" style="border-radius: 05PX;"><img>

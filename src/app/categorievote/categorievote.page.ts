@@ -222,6 +222,16 @@ export class CategorievotePage implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
+        if(data.message!='Bravos vous avez voté'){
+          Swal.fire({
+  
+            heightAuto: false,
+            icon: 'warning',
+            title: data.message,
+            showConfirmButton: false,
+            timer: 2500
+          })
+        }
 
       })
   }

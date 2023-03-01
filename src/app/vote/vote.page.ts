@@ -197,6 +197,25 @@ userLongitude:any
       this.userLatitude,
       this.userLongitude).subscribe(data => {
       console.log(data);
+      if(data.message=='Bravos vous avez voté'){
+        Swal.fire({
+          heightAuto: false,
+          icon: 'success',
+          title: data.message,
+          showConfirmButton: false,
+          timer: 2500
+        })
+      }
+      if(data.message!='Bravos vous avez voté'){
+        Swal.fire({
+
+          heightAuto: false,
+          icon: 'warning',
+          title: data.message,
+          showConfirmButton: false,
+          timer: 2500
+        })
+      }
     })
 
 

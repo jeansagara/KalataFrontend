@@ -9,11 +9,11 @@ import { StorageService } from '../services/storage.service';
   styleUrls: ['./tabs.page.scss'],
 })
 export class TabsPage implements OnInit {
-  User:any
+  User: any
   roles: string[] = [];
   monRole: any;
 
-  constructor(private authService:AuthService,private storageService:StorageService,private route:Router) { }
+  constructor(private authService: AuthService, private storageService: StorageService, private route: Router) { }
   logout(): void {
     this.authService.logout().subscribe({
       next: res => {
@@ -30,16 +30,30 @@ export class TabsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.User= this.storageService.getUser();
+    this.User = this.storageService.getUser();
     console.log("id path" + this.User)
-  if(this.User.id != null){
-    this.roles = this.storageService.getUser().roles;
-    console.log(this.roles);
-if(this.roles[0] !='ROLE_ELECTEUR'){
-  this.monRole = this.roles[0]
-}
+    // if (this.User.id != null) {
+    //   this.roles = this.storageService.getUser().roles;
+    //   console.log(this.roles);
+    //   if (this.roles[0] != 'ROLE_ELECTEUR') {
+    //     this.monRole = this.roles[0]
+    //   }
+
+    // }
 
   }
+
+  ionViewWillEnter(){
+    this.User = this.storageService.getUser();
+    console.log("id path" + this.User)
+    if (this.User.id != null) {
+      this.roles = this.storageService.getUser().roles;
+      console.log(this.roles);
+      if (this.roles[0] != 'ROLE_ELECTEUR') {
+        this.monRole = this.roles[0]
+      }
+
+    }
 
   }
 

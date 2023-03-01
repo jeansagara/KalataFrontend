@@ -26,7 +26,7 @@
 
 <ion-content >
 
-  <ion-card  *ngFor="let c of classements">
+  <ion-card  *ngFor="let c of classements | filter:searchText">
     
     <div class="global" >
       <div class="date">
@@ -34,7 +34,7 @@
         <span style="color:black; font-weight:bold">Parti :{{c.nomparti}}</span> <br>
         <span style="color:red" class="scrore">Score :{{c.pourcentage}} %</span> <br>
       </div>
-      <div class="imgelection"   >
+      <div class="imgelection">
 
         <img src="{{c.imagecandidat}}"  alt="fghjkl">
       </div>
