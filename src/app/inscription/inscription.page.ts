@@ -68,14 +68,14 @@ export class InscriptionPage implements OnInit {
       }
     });
             // Swal message de retour lors du clique de botton
-            Swal.fire({
+            // Swal.fire({
 
-              heightAuto: false,
-              icon: 'success',
-              title: 'Enregistrer avec succès',
-              showConfirmButton: false,
-              timer: 1500
-            })
+            //   heightAuto: false,
+            //   icon: 'success',
+            //   title: 'Enregistrer avec succès',
+            //   showConfirmButton: false,
+            //   timer: 1500
+            // })
   }
   // FONCTION POUR PRENDRE UN PEU DE TEMPS AVANT D'ÊTRE REDIRIGER
   sleep(duration:any) {

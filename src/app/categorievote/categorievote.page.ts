@@ -209,7 +209,11 @@ export class CategorievotePage implements OnInit {
 
   fairevote(idAdministratio: any) {
     console.log(this.user)
-    this.projetdeloiService.creervoteprojet(idAdministratio,this.user,this.vote,this.userLatitude,this.userLongitude,).subscribe(data => {
+    this.projetdeloiService.creervoteprojet(idAdministratio,
+      this.user,
+      this.vote,
+      this.userLatitude,
+      this.userLongitude,).subscribe(data => {
       this.voterprojet = data
         console.log(data)
 
@@ -220,8 +224,10 @@ export class CategorievotePage implements OnInit {
           icon: 'success',
           title: 'Voté avec succès',
           showConfirmButton: false,
-          timer: 1500
+          timer: 2500
         })
+        setTimeout(this.reloderPage, 2600)
+
         if(data.message!='Bravos vous avez voté'){
           Swal.fire({
   
@@ -239,6 +245,9 @@ export class CategorievotePage implements OnInit {
 
   afficherValuevote() {
     console.log(this.vote);
+  }
+  reloderPage(){
+    location.reload
   }
 
 }

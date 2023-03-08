@@ -26,8 +26,7 @@ export class ClassementPage implements OnInit {
   constructor( private classement: ClassementelectionService) { }
 
   ngOnInit() {
-    
-    console.log(this.classements)
+    // console.log(this.classements)
      
     this.classement.classementelection().subscribe(data => {
       console.log(data)
@@ -40,7 +39,7 @@ export class ClassementPage implements OnInit {
       this.idcandidat=data.idcandidat
       this.nomcandidat=data.nomcandidat
 
-   console.log("mes ee conhggfffgh"+JSON.stringify( this.classements))
+  //  console.log("mes ee conhggfffgh"+JSON.stringify( this.classements))
      
     });
 
@@ -55,13 +54,13 @@ export class ClassementPage implements OnInit {
     this.classement.afficherElectionandidat().subscribe(data =>{
      
       this.candidats=data;
-      console.log('dfghjhgfdg', data);
+      // console.log('dfghjhgfdg', data);
       
       
     for(let moi of this.candidats)
         this.voir = moi.nomcandidat
-      console.log("afiche candidatttttttttttttttttttttt")
-      console.log(data)
+      // console.log("afiche candidatttttttttttttttttttttt")
+      // console.log(data)
     })
 
 

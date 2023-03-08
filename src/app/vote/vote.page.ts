@@ -197,7 +197,8 @@ userLongitude:any
       this.userLatitude,
       this.userLongitude).subscribe(data => {
       console.log(data);
-      if(data.message=='Bravos vous avez voté'){
+      
+      if(data.message==='Bravos vous avez voté'){
         Swal.fire({
           heightAuto: false,
           icon: 'success',
@@ -205,8 +206,9 @@ userLongitude:any
           showConfirmButton: false,
           timer: 2500
         })
-      }
-      if(data.message!='Bravos vous avez voté'){
+      
+        setTimeout(this.reloderPage, 2600)
+      } else {
         Swal.fire({
 
           heightAuto: false,
@@ -217,18 +219,10 @@ userLongitude:any
         })
       }
     })
-
-
-    // Swal message de retour lors du clique de botton
-    Swal.fire({
-
-      heightAuto: false,
-      icon: 'success',
-      title: 'Voté avec succès',
-      showConfirmButton: false,
-      timer: 2500
-    })
     
+  }
+  reloderPage(){
+    location.reload
   }
 
 }
